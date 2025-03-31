@@ -5,21 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manikanta Srinivas Jannu - Resume</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    h2:hover {
+      color: #4f46e5;
+      transition: all 0.3s ease-in-out;
+    }
+    a:hover {
+      text-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
   <div class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-1">Manikanta Srinivas Jannu</h1>
-    <p class="text-sm text-gray-600 mb-2">📞 9085160945 | ✉️ manikantaj603@gmail.com</p>
-    <p class="text-sm text-blue-600 underline mb-6">
+    <h1 class="text-3xl font-bold mb-1" data-aos="fade-down">Manikanta Srinivas Jannu</h1>
+    <p class="text-sm text-gray-600 mb-2" data-aos="fade-down" data-aos-delay="100">📞 9085160945 | ✉️ manikantaj603@gmail.com</p>
+    <p class="text-sm text-blue-600 underline mb-6" data-aos="fade-down" data-aos-delay="200">
       <a href="https://www.linkedin.com/in/mani-jannu-b06455196/" target="_blank">LinkedIn Profile</a>
     </p>
 
-    <section class="mb-6">
+    <section class="mb-6" data-aos="fade-up">
       <h2 class="text-xl font-semibold border-b pb-1 mb-2">Summary</h2>
       <p class="text-sm leading-relaxed">Senior Java Developer with 8+ years of experience in Java/J2EE development, Spring Boot, Microservices, REST APIs, cloud platforms (AWS, Azure, PCF), and containerized environments using Docker and Kubernetes. Skilled in Kafka, GraphQL, MongoDB, and a wide range of modern backend technologies.</p>
     </section>
 
-    <section class="mb-6">
+    <section class="mb-6" data-aos="fade-up" data-aos-delay="100">
       <h2 class="text-xl font-semibold border-b pb-1 mb-2">Technical Skills</h2>
       <ul class="text-sm list-disc list-inside">
         <li><strong>Languages:</strong> Java, JavaScript, TypeScript, SQL, PL/SQL</li>
@@ -31,7 +41,7 @@
       </ul>
     </section>
 
-    <section class="mb-6">
+    <section class="mb-6" data-aos="fade-up" data-aos-delay="200">
       <h2 class="text-xl font-semibold border-b pb-1 mb-2">Professional Experience</h2>
       <div class="text-sm">
         <p class="font-bold">Apple, Austin, TX <span class="float-right">Apr 2023 – Present</span></p>
@@ -73,11 +83,19 @@
       </div>
     </section>
 
-    <section>
+    <section data-aos="fade-up" data-aos-delay="300">
       <h2 class="text-xl font-semibold border-b pb-1 mb-2">Education</h2>
       <p class="text-sm">MS in Information Technology, Wilmington University, 2017</p>
       <p class="text-sm">BE in Information Technology, Lakireddy Bali Reddy College of Engineering, 2015</p>
     </section>
   </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800
+    });
+  </script>
 </body>
 </html>

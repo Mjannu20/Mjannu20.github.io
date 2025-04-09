@@ -7,44 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    h1.gradient-text {
-      background: linear-gradient(to right, #6366f1, #3b82f6, #06b6d4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradient-shift 4s ease infinite;
-    }
-    @keyframes gradient-shift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    .profile-pic {
-      border: 3px solid #94a3b8;
-      box-shadow: 0 0 15px rgba(59,130,246,0.5);
-      transition: transform 0.4s ease-in-out;
-    }
-    .profile-pic:hover {
-      transform: rotate(2deg) scale(1.05);
-      box-shadow: 0 0 25px rgba(96,165,250,0.7);
-    }
-    .tilt:hover {
-      transform: rotateX(5deg) rotateY(5deg);
-      transition: transform 0.4s ease;
-    }
-    .shimmer {
-      position: relative;
-      overflow: hidden;
-    }
-    .shimmer::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -75%;
-      height: 100%; width: 50%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      animation: shimmer 2s infinite;
-    }
-    @keyframes shimmer {
-      100% { left: 125%; }
+    h2:hover {
+      color: #4f46e5;
+      transition: all 0.3s ease-in-out;
     }
     a:hover {
       text-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -53,12 +18,11 @@
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans transition duration-300" id="page-body">
   <div class="max-w-4xl mx-auto p-6">
-    <!-- Header -->
     <div class="flex items-center justify-between mb-6">
       <div class="flex items-center space-x-4">
-        <img src="mani.jpg" alt="Profile" class="rounded-full w-20 h-20 profile-pic" />
+        <img src="mani.jpg" alt="Profile" class="rounded-full w-20 h-20 border-2 border-gray-400 shadow-md" />
         <div>
-          <h1 class="text-3xl font-bold gradient-text" data-aos="fade-down">Manikanta Srinivas Jannu</h1>
+          <h1 class="text-3xl font-bold" data-aos="fade-down">Manikanta Srinivas Jannu</h1>
           <p class="text-sm text-gray-600" data-aos="fade-down" data-aos-delay="100">📞 9085160945 | ✉️ manikantaj603@gmail.com</p>
           <p class="text-sm text-blue-600 underline" data-aos="fade-down" data-aos-delay="200">
             <a href="https://www.linkedin.com/in/mani-jannu-b06455196/" target="_blank">LinkedIn Profile</a>
@@ -67,91 +31,128 @@
       </div>
       <div class="space-x-2">
         <button onclick="toggleDarkMode()" class="bg-gray-800 text-white px-3 py-1 rounded text-sm hover:bg-gray-600">🌗 Toggle Dark Mode</button>
-        <a href="Manikanta-Srinivas-Jannu-Resume.pdf" download class="bg-blue-600 shimmer text-white px-3 py-1 rounded text-sm hover:bg-blue-500">📥 Download Resume</a>
+        <a href="Manikanta-Srinivas-Jannu-Resume.pdf" download class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-500">📥 Download Resume</a>
       </div>
     </div>
 
     <section class="mb-6" data-aos="fade-up">
+      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Summary</h2>
+      <p class="text-sm leading-relaxed">Senior Java Developer with 8+ years of experience in building scalable enterprise applications using Java, Spring Boot, Spring MVC, and Microservices. Proficient in RESTful/SOAP services, cloud deployments on AWS, Azure, and PCF, and container orchestration using Docker and Kubernetes. Skilled in working with Oracle, MySQL, MongoDB, and Cassandra, with hands-on expertise in PL/SQL and NoSQL migrations. Strong in Kafka, Elasticsearch, GraphQL, and secure authentication (LDAP, SASL, Kerberos). Experienced with Agile, TDD, CI/CD pipelines (Jenkins, Git, Maven), testing (JUnit, Mockito, Selenium), and monitoring tools like Splunk and Kibana.</p>
+    </section>
+
+    <section class="mb-6" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Technical Skills</h2>
+      <ul class="text-sm list-disc list-inside">
+        <li><strong>Languages:</strong> Java, JavaScript, TypeScript, SQL, PL/SQL</li>
+        <li><strong>Backend Frameworks:</strong> Spring Boot, Spring MVC, Hibernate, JPA</li>
+        <li><strong>Cloud Platforms:</strong> AWS, GCP, Azure</li>
+        <li><strong>Databases:</strong> MongoDB, Oracle, MySQL, DynamoDB, Cassandra</li>
+        <li><strong>DevOps Tools:</strong> Jenkins, Docker, CI/CD, Kubernetes, Ansible, Terraform, Git</li>
+        <li><strong>Monitoring Tools:</strong> Grafana, Splunk, CloudWatch, Stackdriver</li>
+      </ul>
+    </section>
+
+    <section class="mb-6" data-aos="fade-up" data-aos-delay="200">
       <h2 class="text-xl font-semibold border-b pb-1 mb-2">Professional Experience</h2>
-      <div class="text-sm whitespace-pre-line space-y-6">
-        <div class="tilt" data-aos="zoom-in-up">
-          <strong>Apple, Austin, TX</strong> – <em>Backend Java Developer</em> (Apr 2023 – Present)
-          <ul class="list-disc list-inside">
-            <li>Participated in all phases of the SDLC, utilizing Agile/SCRUM methodologies, Java 17 features like method references, streams, lambdas, and concurrency APIs to enhance project execution and functionality.</li>
-            <li>Developed RESTful microservices using Spring Boot, integrating Spring Core, Spring Security, Spring Batch, and Spring MVC to build scalable solutions, including GraphQL APIs for unified data aggregation and manipulation.</li>
-            <li>Implemented data access layers with MongoDB and Spring Data, alongside persistence layers using Spring JPA and Hibernate, for efficient CRUD operations and transactional integrity.</li>
-            <li>Leveraged Docker and Kubernetes for containerized deployment and management, scaling application pods with kubectl commands, and deploying APIs to AWS Cloud.</li>
-            <li>Built Kafka producer and consumer applications, integrating with Spark Streaming API for real-time data processing and evaluating backend services using Elasticsearch and Spark.</li>
-            <li>Automated CI/CD processes using Maven, Jenkins, and integrated SonarQube to ensure high code quality and scalability, while performing unit testing with JUnit and Mockito.</li>
-            <li>Designed and implemented Kafka-based distributed systems for real-time messaging, ensuring data consistency and fault tolerance with Zookeeper integration.</li>
-            <li>Utilized Spring AOP and Spring Actuator to generate metrics at the method level, improving monitoring and optimizing backend performance.</li>
-            <li>Monitored and debugged applications with Log4J2 and Git-based version control tools like SourceTree, ensuring error-free and version-controlled development.</li>
-          </ul>
-        </div>
+      <div class="text-sm whitespace-pre-line">
+        <strong>Apple, Austin, TX</strong> – <em>Backend Java Developer</em> (Apr 2023 – Present)
+        <br><em>Description:</em> Contributed to Apple POS, focusing on the Apple EMV Driver—crucial middleware interfacing POS terminals, banks, and payment networks. Enabled secure chip & pin credit card transactions and backend authorization for seamless retail processing.
+        
+        • Designed and implemented Spring Boot microservices for Apple EMV Driver to handle secure POS transactions.
+        •	Participated in all phases of the SDLC, utilizing Agile/SCRUM methodologies, Java 17 features like method references, streams, lambdas, and concurrency APIs to enhance project execution and functionality.
+        •	Developed RESTful microservices using Spring Boot, integrating Spring Core, Spring Security, Spring Batch, and Spring MVC to build scalable solutions, including GraphQL APIs for unified data aggregation and manipulation.
+        •	Implemented data access layers with MongoDB and Spring Data, alongside persistence layers using Spring JPA and Hibernate, for efficient CRUD operations and transactional integrity.
+        •	Leveraged Docker and Kubernetes for containerized deployment and management, scaling application pods with kubectl commands, and deploying APIs to AWS Cloud.
+        •	Built Kafka producer and consumer applications, integrating with Spark Streaming API for real-time data processing and evaluating backend services using Elasticsearch and Spark.
+        •	Automated CI/CD processes using Maven, Jenkins, and integrated SonarQube to ensure high code quality and scalability, while performing unit testing with JUnit and Mockito.
+        •	Designed and implemented Kafka-based distributed systems for real-time messaging, ensuring data consistency and fault tolerance with Zookeeper integration.
+        •	Utilized Spring AOP and Spring Actuator to generate metrics at the method level, improving monitoring and optimizing backend performance.
+        •	Monitored and debugged applications with Log4J2 and Git-based version control tools like SourceTree, ensuring error-free and version-controlled development.
 
-        <div class="tilt" data-aos="zoom-in-up" data-aos-delay="100">
-          <strong>Schneider, GreenBay, WI</strong> – <em>Senior Java Developer</em> (Jul 2021 – Feb 2023)
-          <ul class="list-disc list-inside">
-            <li>Developed and deployed RESTful microservices using Java, Spring Boot, and Spring MVC, leveraging Pivotal Cloud Foundry (PCF) and Azure for cloud-based deployments.</li>
-            <li>Integrated Kafka for real-time messaging, designed consumer groups, and processed data streams effectively, enhancing reliability of distributed systems.</li>
-            <li>Built interactive UI components with JavaScript, tested with Karma and Jasmine, and optimized performance using Spring MVC.</li>
-            <li>Managed containerized applications with Docker and orchestrated deployments using Kubernetes.</li>
-            <li>Provided 24/7 production support and resolved critical incidents using Splunk and Log4J2.</li>
-            <li>Integrated GraphQL schema registry and implemented authentication/authorization with JWT and OAuth.</li>
-            <li>Wrote complex SQL queries for Oracle 12c and integrated them into microservices using Spring JDBC.</li>
-            <li>Achieved 90%+ test coverage using JUnit, Mockito, and TestNG; configured CI/CD with Jenkins and Maven.</li>
-          </ul>
-        </div>
 
-        <div class="tilt" data-aos="zoom-in-up" data-aos-delay="200">
-          <strong>Paypal, Austin, TX</strong> – <em>Full Stack Java Developer</em> (Dec 2020 – Jun 2021)
-          <ul class="list-disc list-inside">
-            <li>Built and deployed Spring Boot and Node.js microservices using Kubernetes and Docker in GCP.</li>
-            <li>Integrated MongoDB with Node.js using Mongoose; stored/retrieved application user data.</li>
-            <li>Used GraphQL APIs for efficient data retrieval and backend communication.</li>
-            <li>Managed JWT tokens and asynchronous processes with Spring Futures.</li>
-            <li>Enabled high availability using Apache Kafka and Zookeeper; optimized GraphQL queries and resolvers.</li>
-            <li>Built GitLab CI/CD pipelines; implemented automated testing with JUnit, Jasmine, and Karma.</li>
-          </ul>
-        </div>
+        <strong>Schneider, GreenBay, WI</strong> – <em>Senior Java Developer</em> (Jul 2021 – Feb 2023)
+        <br><em>Description:</em> Designed Azure-based integrations between Schneider’s ERP and Mastermind TMS. Enhanced legacy modules and built modern load-posting architecture, laying the foundation for integrations with load boards like DAT, Truckstop, and Schneider Freight Power Carrier.
 
-        <div class="tilt" data-aos="zoom-in-up" data-aos-delay="300">
-          <strong>Apple, Austin, TX</strong> – <em>Java Engineer</em> (Apr 2020 – Nov 2020)
-          <ul class="list-disc list-inside">
-            <li>Developed and deployed Spring Boot microservices for AST2 and EasyPay applications.</li>
-            <li>Migrated and deployed apps to Tomcat 8 with Maven/ANT and Spring Config Server.</li>
-            <li>Configured ElasticSearch, Logstash, and Kibana for centralized logging and metrics.</li>
-            <li>Set up AWS CodePipeline/CodeDeploy to ECS; managed VPCs and site-to-site VPNs.</li>
-            <li>Wrote SQL/PLSQL procedures and used MongoDB for document data storage.</li>
-            <li>Tested APIs via Postman, documented with Swagger, and achieved unit testing via JUnit.</li>
-          </ul>
-        </div>
+        • Built cloud-native microservices using Spring Boot for freight and logistics optimization.
+        •	Developed and deployed RESTful microservices using Java, Spring Boot, and Spring MVC, leveraging Pivotal Cloud Foundry (PCF) and Azure for cloud-based deployments, ensuring high scalability and availability.
+        •	Integrated Kafka for real-time messaging, designed consumer groups, and processed data streams effectively, enhancing the reliability of distributed systems.
+        •	Built interactive UI components with JavaScript, tested with Karma and Jasmine, and optimized performance across multiple browsers using Spring MVC.
+        •	Managed containerized applications with Docker and orchestrated deployments using Kubernetes, ensuring seamless scaling and fault-tolerant infrastructure.
+        •	Provided 24/7 production support, including monitoring production systems, resolving critical incidents, and debugging issues using Splunk and Log4J2 to minimize downtime and ensure system reliability.
+        •	Integrated GraphQL schema registry for centralized API management and version control.
+        •	Implemented GraphQL API authentication and authorization using JWT and OAuth for secure access.
+        •	Wrote complex SQL queries for Oracle 12c, optimizing database interactions and integrating with microservices for CRUD operations using Spring JDBC.
+        •	Automated testing with JUnit, Mockito, and TestNG, achieving over 90% test coverage, and set up CI/CD pipelines using Jenkins and Maven to streamline the development process.
+        
+        <strong>Paypal, Austin, TX</strong> – <em>Full Stack Java Developer</em> (Dec 2020 – Jun 2021)
+        <br><em>Description:</em> Worked on Raptor—PayPal's JVM framework powering 1000+ applications handling 100B+ requests/day. Developed microservices and backend tools that served as the backbone of PayPal's large-scale transactional systems.
 
-        <div class="tilt" data-aos="zoom-in-up" data-aos-delay="400">
-          <strong>Express Scripts, Minneapolis, MN</strong> – <em>Java Developer</em> (Jul 2016 – Mar 2020)
-          <ul class="list-disc list-inside">
-            <li>Developed SOAP web services using Spring and created WSDLs and XML parsers.</li>
-            <li>Built persistence layers with Hibernate and Oracle, integrated stored procedures.</li>
-            <li>Created dynamic UIs using JSF, HTML, AngularJS, and AJAX.</li>
-            <li>Managed multi-tenant Cassandra clusters in AWS and on-prem for DR and storage.</li>
-            <li>Designed distributed systems using AWS EC2, S3, EBS, Glacier, Lambda, and Aurora RDS.</li>
-            <li>Created microservices to process Kafka messages and reprocess failures by offset IDs.</li>
-            <li>Deployed services via WebLogic and AWS Elastic Beanstalk, using Maven and CloudFormation.</li>
-          </ul>
-        </div>
+        • Designed and developed Node.js and Spring Boot microservices for PayPal’s Raptor platform.
+        •	Designed and implemented robust RESTful services and microservices using Spring Boot, Spring Integration, and Hibernate, incorporating GraphQL for efficient data retrieval and streamlined backend communication.
+        •	Utilized Docker and Kubernetes for containerized application deployments, managing GCP infrastructure with GitLab CI/CD, including setting up databases in RDS and storage on S3 buckets.
+        •	Created and managed MongoDB collections, writing services to store and retrieve user data for the application using the Mongoose API in Node.js 
+        •	Secured application endpoints with JWT tokens, implemented asynchronous calls using Futures and Spring Framework, and maintained high availability with Apache Kafka and Zookeeper.
+        •	Optimized GraphQL queries and resolvers to reduce response times and improve user experience, while providing comprehensive API documentation to support seamless integration.
+        •	Automated continuous integration and delivery (CI/CD) pipelines using Jenkins, while achieving high scalability in deployments with Docker and Kubernetes.
+        •	Conducted rigorous unit, integration, and regression testing using JUnit, Jasmine, and Karma, ensuring code coverage and resolving bugs with Log4J2 and JIRA for defect tracking.
+        •	Collaborated in an Agile environment, participating in daily scrums, resolving bugs, conducting code reviews, and managing version control using Git to ensure timely and efficient project delivery.        
+
+        <strong>Apple, Austin, TX</strong> – <em>Java Engineer</em> (Apr 2020 – Nov 2020)
+        <br><em>Description:</em> Worked on AST2 (Apple Service Toolkit)—a cloud diagnostics tool for Mac/iOS, and EasyPay—a device trade-in/payment platform for Apple Stores. Supported hardware triage and payment processes.
+
+        • Built REST APIs in Spring Boot to support AST2 diagnostics and EasyPay terminal workflows.
+        •	Developed and deployed RESTful microservices using Spring Boot and Spring MVC, implementing core Java EE components with Spring IOC, AOP, and Spring Security for secure and scalable application architecture.
+        •	Migrated and deployed applications to Tomcat 8 Server, using Maven and ANT for build and deployment scripts, while maintaining centralized configurations through Spring Config Server.
+        •	Built centralized logging systems using ElasticSearch, Logstash, and Kibana to enable efficient debugging and monitored system performance, identifying bottlenecks with average aggregation metrics.
+        •	Designed and established AWS VPCs and site-to-site VPN connections implemented automated pipelines using AWS CodePipeline, CodeBuild, and CodeDeploy for deploying Docker containers to AWS ECS.
+        •	Wrote SQL queries, stored procedures, and triggers for MySQL and Oracle databases, ensuring optimal data access and manipulation, and utilized MongoDB for document storage and retrieval.
+        •	Conducted integration testing of REST APIs using Postman, created Swagger documentation, and executed unit tests with JUnit to maintain high code quality and reliability.
+        •	Participated in Agile Scrum ceremonies, including daily stand-ups and sprint planning, collaborating closely with cross-functional teams to resolve defects tracked in JIRA.
+        •	Configured and maintained Splunk for centralized monitoring and logging and integrated CI/CD pipelines using Jenkins and RIO for efficient microservices deployment.
+        •	Provided end-to-end production support during system testing and UAT phases, coordinating with release management teams to ensure seamless deployments in live environments.        
+
+        <strong>Express Scripts, Minneapolis, MN</strong> – <em>Java Developer</em> (Jul 2016 – Mar 2020)
+        <br><em>Description:</em> Built data ingestion and transformation systems integrating multiple vendor feeds into a unified repository. Emphasized validations, schema transformations, and storage solutions using Java, Spring, SOAP, and Hibernate.
+
+        •	Developed and integrated SOAP Web Services with Spring Framework, creating WSDLs, web methods, and XML parsers for efficient business logic implementation across modules.
+        •	Designed and implemented the persistence layer using Hibernate integrated with Oracle databases, performing CRUD operations, polymorphic associations, and stored procedure integration.
+        •	Built user interfaces and panels using HTML, XHTML, JSF, CSS, JQuery, DOJO, and AngularJS, enhancing user interaction through server-side scripting with AJAX and JSP.
+        •	Deployed and configured multi-tenant Cassandra clusters on AWS EC2 and on-premises environments for disaster recovery, data storage, and scalable infrastructure management.
+        •	Designed fault-tolerant distributed systems using AWS EC2, S3, EBS, Glacier, ElasticCache, RDS (Aurora), and Lambda, ensuring high availability and performance across cloud applications.
+        •	Implemented Spring Boot microservices for processing Kafka messages, including reprocessing failure messages using offset IDs, and worked closely with Kafka Admin teams for cluster setup in QA and production environments.
+        •	Configured and deployed applications on AWS Elastic Beanstalk and WebLogic Server, automating build processes with Maven and managing CloudFormation templates for resource provisioning.
+
       </div>
+    </section>
+
+    <section class="mb-6" data-aos="fade-up">
+      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Environment</h2>
+      <p class="text-sm leading-relaxed">Java/J2EE, Java 8/17, Spring Boot, Spring MVC, Spring Batch, Spring Security, Spring Integration, Spring JPA, Hibernate, RESTful Webservices, SOAP, Microservices, GraphQL, Kafka, Spark, Docker, Kubernetes, AWS (EC2, ECS, RDS, S3, VPC, CodePipeline, CodeBuild, CodeDeploy, Elastic Beanstalk, Lambda, ElasticCache, EBS, Glacier), Azure, GCP, Pivotal Cloud Foundry (PCF), Git, GitLab CI/CD, Jenkins, Maven, Gradle, Ant, JUnit, Mockito, TestNG, Log4j2, Splunk, ElasticSearch, Logstash, Kibana, OpenTelemetry, JIRA, MongoDB, Oracle 11g/12c, MySQL, Cassandra, DynamoDB, PL/SQL, SQL, Sequel Pro, JDBC, JMS, WebLogic, Tomcat 8, Application Server 8.0, CloudFormation, JFROG Artifactory, RADAR, RIO CI/CD, Swagger, Postman, SourceTree, Agile Methodology, JWT, OAuth, LDAP, Zookeeper, Mongoose API, Oracle BPM, JAXB.</p>
+    </section>
+
+    <section data-aos="fade-up" data-aos-delay="300">
+      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Education</h2>
+      <p class="text-sm">MS in Information Technology, Wilmington University, 2017</p>
+      <p class="text-sm">BE in Information Technology, Lakireddy Bali Reddy College of Engineering, 2015</p>
     </section>
   </div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ once: true, duration: 800 });
+    AOS.init({
+      once: true,
+      duration: 800
+    });
+
     function toggleDarkMode() {
       const body = document.getElementById('page-body');
-      body.classList.toggle('bg-gray-50');
-      body.classList.toggle('text-gray-900');
-      body.classList.toggle('bg-gray-900');
-      body.classList.toggle('text-gray-100');
+      if (body.classList.contains('bg-gray-50')) {
+        body.classList.remove('bg-gray-50', 'text-gray-900');
+        body.classList.add('bg-gray-900', 'text-gray-100');
+      } else {
+        body.classList.remove('bg-gray-900', 'text-gray-100');
+        body.classList.add('bg-gray-50', 'text-gray-900');
+      }
     }
   </script>
 </body>
